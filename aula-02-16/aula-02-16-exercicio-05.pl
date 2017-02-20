@@ -56,3 +56,6 @@ ataca(monstro_verde, nádia).
 animal(monstro_verde).
 
 afasta(derrubar(monstro_verde), monstro_verde).
+mandou_fazer(silvestre, piter, proteger(nádia)).
+mandou_fazer(hadar, piter, derrubar(asrat)).
+mandou_fazer(asrat, piter, derrubar(hadar)).
