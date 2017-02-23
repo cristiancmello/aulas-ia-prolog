@@ -32,17 +32,17 @@ planta(alga).
  *  8) ?- come(Quem, coelho), come(urso, Quem).
  */
 
-% 9) DefiniÁ„o de presa: presa È um animal que È comido por outro
+% 9) Defini√ß√£o de presa: presa √© um animal que √© comido por outro
 % (qualquer um).
 presa(P):-
     animal(P),
     come(_, P). % Qualquer animal come Presa
 
-% 10) Quem È presa mas n„o È comido pela raposa?
+% 10) Quem √© presa mas n√£o √© comido pela raposa?
 % presa(Quem), come(X, Quem), X \= raposa.
-% X \= presa significa que X N√O SER¡ UNIFICADO COM raposa.
+% X \= presa significa que X N√ÉO SER√Å UNIFICADO COM raposa.
 
-% 11) DefiniÁ„o de predador: animal quer come qualquer outro.
+% 11) Defini√ß√£o de predador: animal quer come qualquer outro.
 predador(X):-
     animal(X),
     presa(Y),
@@ -54,17 +54,17 @@ predador_other(X):-
     animal(Y),
     come(X, Y).
 
-% 12) DefiniÁ„o de herbÌvoro: animal que come planta
+% 12) Defini√ß√£o de herb√≠voro: animal que come planta
 herbivoro(A):-
     animal(A),
     planta(Y),
     come(A, Y).
 
-% 13) RelaÁ„o recursiva da cadeia alimentar.
+% 13) Rela√ß√£o recursiva da cadeia alimentar.
 %     1) X come Y diretamente
-%     2) X come Z e Y est· na cadeia alimentar de Z
+%     2) X come Z e Y est√° na cadeia alimentar de Z
 %
-/* DefiniÁ„o do caso base */
+/* Defini√ß√£o do caso base */
 na_cadeia_alimentar(X, Y):- come(X, Y).
-/* DefiniÁ„o da recurs„o */
+/* Defini√ß√£o da recurs√£o */
 na_cadeia_alimentar(X, Y):- come(X, Z), na_cadeia_alimentar(Z, Y).
