@@ -1,9 +1,9 @@
-cura(Pessoa,Doença) :-
-	médico(Pessoa),
-	especialista(Pessoa, Doença).
+cura(Pessoa,DoenÃ§a) :-
+	mÃ©dico(Pessoa),
+	especialista(Pessoa, DoenÃ§a).
 
-médico(M) :- toxologista(M).
-médico(M) :- traumatologista(M).
+mÃ©dico(M) :- toxologista(M).
+mÃ©dico(M) :- traumatologista(M).
 
 toxologista(sorus).
 toxologista(morbus).
@@ -12,6 +12,6 @@ toxologista(vitus).
 traumatologista(pugnus).
 
 especialista(morbus,envenenamento).
-especialista(sorus, unhada_de_dragão).
+especialista(sorus, unhada_de_dragÃ£o).
 especialista(pugnus,ferimentos).
 especialista(vitus,dentada_de_hidra).
