@@ -1,13 +1,13 @@
 /*
 
-IMPORTANTE! Ordem da soma pode alterar o comportamento devido à forma de
-como a 1ª ou 2ª lista são consumidas até chegar na lista vazia.
+IMPORTANTE! Ordem da soma pode alterar o comportamento devido Ã  forma de
+como a 1Âª ou 2Âª lista sÃ£o consumidas atÃ© chegar na lista vazia.
 
 Base : Lista + [] == Lista
 Geral: [C|R1] + L == [C|R2] com R2=R1+L.
 
 
-  1ª       2ª
+  1Âª       2Âª
 [C|R1] + Lista
 [C|R2], onde R2 = R1 + L
 
