@@ -4,6 +4,7 @@
     - consult
     - make
     - assertz e asserta
+    - dynamic
     - retract
     - abolish
     - univ ::= <variavel-livre> =.. <lista>
@@ -20,14 +21,14 @@
  */
 
 liste(Arquivo):- see(Arquivo), % Olhando Arquivo
- nl,read(Frase), % LÃª uma Frase do Arquivo
+ nl,read(Frase), % Lê uma Frase do Arquivo
  escreva(Frase), % Vai escrever a frase.
  seen.
 
 escreva(Frase) :- write(Frase), nl,
- Frase = end_of_file, !. /* PÃ¡ra leitura quando
- end_of_file Ã© encontrado. */
+ Frase = end_of_file, !. /* Pára leitura quando
+ end_of_file é encontrado. */
 
 escreva(_) :-
- read(Outra_Frase), % LÃª Outra_Frase
+ read(Outra_Frase), % Lê Outra_Frase
  escreva(Outra_Frase).
