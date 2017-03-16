@@ -1,4 +1,4 @@
-% xfx: funtor est· no meio
+% xfx: funtor est√° no meio
 % fx: functor antes e argumento depois
 % xfy: y define a associatividade (no caso a direita tem maior
 % prioridade)
@@ -7,9 +7,9 @@
 %
 % xfx => sem associatividade
 %
-% N„o precisa fazer muitos exercicios de operadores (n„o ser·
+% N√£o precisa fazer muitos exercicios de operadores (n√£o ser√°
 % profundamente cobrado)
 
-op(30,yf,È).
-op(35,yf,[homem, mulher, robÙ]).
+op(30,yf,√©).
+op(35,yf,[homem, mulher, rob√¥]).
 
