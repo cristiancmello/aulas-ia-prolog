@@ -1,58 +1,58 @@
-/* 4.24 - ESQUEMAS DE REPETI«√O
+/* 4.24 - ESQUEMAS DE REPETI√á√ÉO
 
 RECURSIVIDADE
    Def. recursiva:
-      - declaraÁıes classificadas como triviais e gerais;
+      - declara√ß√µes classificadas como triviais e gerais;
       ...
 
-ACUMULA«√O
-   - Esquema utilizado para melhorar a quest„o de eficiÍncia
+ACUMULA√á√ÉO
+   - Esquema utilizado para melhorar a quest√£o de efici√™ncia
      do esquema recursivo.
 
-   - Nada fica pendente -> OS C¡LCULOS (VALORES) INTERMEDI¡RIOS
-     S√O PASSADOS PARA A PR”XIMA CHAMADA PELO PAR¬METRO ACUMULADOR
+   - Nada fica pendente -> OS C√ÅLCULOS (VALORES) INTERMEDI√ÅRIOS
+     S√ÉO PASSADOS PARA A PR√ìXIMA CHAMADA PELO PAR√ÇMETRO ACUMULADOR
 
-   IMPORTANTE! SE N√O HOUVER PEND NCIA, N√O … ACUMULA«√O E SIM
+   IMPORTANTE! SE N√ÉO HOUVER PEND√äNCIA, N√ÉO √â ACUMULA√á√ÉO E SIM
    RECURSIVIDADE.
 
-REPETI«√O
+REPETI√á√ÉO
    <a> :- <condicao_interrupcao>, !.
    <a> :- <b>, <c>, <d>, ..., <e>, <f>, <a>.
 
    Exemplo:
    exemplo(10) :- !, nl.
    exemplo(K) :-
-	writeln('Isto È uma repetiÁ„o!'),
+	writeln('Isto √© uma repeti√ß√£o!'),
 	J is K+1, exemplo(J).
 
 MAPEAMENTO
 
 
  */
-%caso trivial: somatÛria de [ ] È 0.
+%caso trivial: somat√≥ria de [ ] √© 0.
 somatoria_recursiva([ ], 0).
 
 %caso geral: chamada recursiva para atingir o caso simplificado.
 somatoria_recursiva([ X | Y ], S) :- somatoria_recursiva(Y, S1), S is X + S1.
 
 
-somatoria_acumulativa([ ], Acumulador, SaÌda) :- SaÌda = Acumulador.
-somatoria_acumulativa( [X|Y], ResParcial, SaÌda) :- Acumulador is X+ ResParcial,
-somatoria_acumulativa(Y, Acumulador, SaÌda).
+somatoria_acumulativa([ ], Acumulador, Sa√≠da) :- Sa√≠da = Acumulador.
+somatoria_acumulativa( [X|Y], ResParcial, Sa√≠da) :- Acumulador is X+ ResParcial,
+somatoria_acumulativa(Y, Acumulador, Sa√≠da).
 
 
 
 
-/* Os predicados que seguem realizam operaÁıes aritmÈticas. */
-/* O resultado de uma operaÁ„o È colocado no primeiro argumento*/
-/* O segundo argumento contÈm a lista de operandos. */
+/* Os predicados que seguem realizam opera√ß√µes aritm√©ticas. */
+/* O resultado de uma opera√ß√£o √© colocado no primeiro argumento*/
+/* O segundo argumento cont√©m a lista de operandos. */
 soma(S,[X,Y]) :- S is X+Y.
 produto(P,[X,Y]) :- P is X*Y.
 unidade(1,_).
 subtracao(Sub,[X,Y]):-Sub is X-Y.
 quadrado(Q,X):- Q is X*X.
 
-/* os predicados que fazem mapeamento s„o definidos a seguir: */
+/* os predicados que fazem mapeamento s√£o definidos a seguir: */
 ziper([ ],[ ],[ ]) :- !.
 ziper([X1|R1], [X2|R2],[[X1,X2]|R]):-ziper(R1,R2,R).
 
@@ -61,23 +61,23 @@ ap(Operac,[X|Y],[OperacX|OperacY]) :-
    Predicado =.. [Operac,OperacX,X],
    call(Predicado), ap(Operac,Y,OperacY).
 
-% EXERCÕCIO:
+% EXERC√çCIO:
 % Deduzir o funcionamento a partir do predicado "reduz/3".
 
 
 
-% Aplica uma operaÁ„o (<Operac>) sobre uma lista. A operaÁ„o
+% Aplica uma opera√ß√£o (<Operac>) sobre uma lista. A opera√ß√£o
 % deve ser definida na base.
 % Ex. da chamada: ?- reduz(soma, [1, 2, 3], R).
 reduz(Operac,[X,Y],Resultado) :- !,
-    Predicado=.. [Operac,Resultado,[X,Y]], call(Predicado). % call È opcional
+    Predicado=.. [Operac,Resultado,[X,Y]], call(Predicado). % call √© opcional
 
 reduz(Operac,[X|Y],Resultado) :-
     reduz(Operac,Y,Y_reduzido),
     Predicado =.. [Operac,Resultado,[X,Y_reduzido]],
     call(Predicado).
 
-% Insere um n˙mero <N> ou ‡ direita ou ‡ esquerda em sublistas.
+% Insere um n√∫mero <N> ou √† direita ou √† esquerda em sublistas.
 % ?- d_dir(2, [1, 2, 4], R).
 % R = [[1, 2], [2, 2], [4, 2]].
 d_dir(N,[ ],[ ]):- !.
@@ -92,14 +92,14 @@ varre(Op,[X|Y],[AcX,AcY|Resto]):-
 	varre(Op,Y,[AcY|Resto]),
 	Predicado =.. [Op,AcX,[X,AcY]], call(Predicado).
 
-%% C·lculo da mÈdia usando mapeamento
-mÈdia(L,M):-
+%% C√°lculo da m√©dia usando mapeamento
+m√©dia(L,M):-
 	reduz(soma,L,S),
 	ap(unidade,L,ListaDeUns),
-	reduz(soma,ListaDeUns,N˙mDeElems),
-	M is S/N˙mDeElems.
+	reduz(soma,ListaDeUns,N√∫mDeElems),
+	M is S/N√∫mDeElems.
 
-%% C·lculo do Produto Escalar de duas listas
+%% C√°lculo do Produto Escalar de duas listas
 escalar(V1,V2,E):-
 	ziper(V1,V2,V),
 	ap(produto,V,ListaDeProdutos),
