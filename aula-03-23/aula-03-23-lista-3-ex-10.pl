@@ -1,6 +1,6 @@
 
 % i)
-/* % A lista abaixo se aplica atÈ o exercicio iv)
+/* % A lista abaixo se aplica at√© o exercicio iv)
 aresta(a, b, 2).
 aresta(a, c, 5).
 aresta(b, d, 3).
@@ -10,9 +10,9 @@ aresta(d, g, 7).*/
 
 
 % ii)
-% VI = VÈrtice Inicial
-% VF = VÈrtice Final
-% VInterm = VÈrtice Intermedi·rio
+% VI = V√©rtice Inicial
+% VF = V√©rtice Final
+% VInterm = V√©rtice Intermedi√°rio
 %
 % Base:	      caminho(VI, VF):- aresta(VI, VF), !.
 % Caso Geral: caminho(VI, VF):- aresta(VI, VInterm), caminho(Vinterm,
@@ -28,7 +28,7 @@ caminho(VI, VF):- aresta(VI, VInterm), caminho(Vinterm, VF).
 % false.
 
 % iii)
-% LV = Lista de VÈrtices
+% LV = Lista de V√©rtices
 lista_caminho(VI, VF, [VI, VF]):- aresta(VI, VF, _), !.
 lista_caminho(VI, VF, [VI|LV]):- aresta(VI, VInterm, _), lista_caminho(VInterm, VF, LV).
 
@@ -42,7 +42,7 @@ custo_cam(VI, VF, Custo):-
 	Custo is Peso1 + Peso2.
 
 % v)
-% Custo MÌnimo:
+% Custo M√≠nimo:
 %    ?- custo_min(a, e, Cmin).
 %    Cmin = 9.
 %    true.
@@ -61,5 +61,6 @@ aresta(c, f, 2).
 aresta(c, g, 7).
 aresta(f, k, 7).
 
+% N√£o funciona!!!
 custo_min(VI, VF, CCm):-
 	setof(C, custo_caminho(VI, VF, C), [CCm | _]).
