@@ -1,20 +1,25 @@
-% findall
-% findall(par(B,C), av么(B,C), Lista).
+% RESPOSTAS MULTIPLAS
 %
-% setof: retorna uma lista ORDENADA
-% setof(D, av么(D),L).
-% Ex.: setof(A, av么(A), LR).
+% findall: obter todas as respostas.
+% findall(par(B,C), avo(B,C), Lista).
 %
-% bagof: mesma coisa que o findall
+%     IMPORTANTE! findall ADMITE REPETI敲O DE ELEMENTOS
+%
+% setof: retorna uma lista ORDENADA E SEM REPETICAO
+% setof(D, avo(D),L).
+% Ex.: setof(A, avo(A), LR).
+%
+% bagof: mesma coisa que o findall. No entanto, ordena a lista.
 %
 pai(urano,cronos).
 pai(cronos,zeus).
 pai(zeus,ares).
 pai(ares,eros).
 pai(zeus,apolo).
-pai(apolo,ascl茅pio).
-av么(B,C) :- pai(B,D), pai(D,C).
-av么(D) :- av么(D,L).
+pai(apolo,asclepio).
 
-% Singleton variable => sugest茫o para colocar _ no lugar da vari谩vel
-% (indica莽茫o de que n茫o 茅 necess谩rio)
+avo(B,C) :- pai(B,D), pai(D,C).
+avo(D) :- avo(D,_).
+
+% Singleton variable => sugestao para colocar _ no lugar da variavel
+% (indicacao de que nao eh necessario)
