@@ -1,4 +1,7 @@
-% xfx: funtor está no meio
+:- op(30,yf,�).
+:- op(35,yf,[homem, mulher, robo]).
+
+% xfx: funtor esta no meio
 % fx: functor antes e argumento depois
 % xfy: y define a associatividade (no caso a direita tem maior
 % prioridade)
@@ -7,9 +10,7 @@
 %
 % xfx => sem associatividade
 %
-% Não precisa fazer muitos exercicios de operadores (não será
-% profundamente cobrado)
+% N�o precisa fazer muitos exercicios de operadores (sao ser�o
+% profundamente cobrados)
 
-op(30,yf,é).
-op(35,yf,[homem, mulher, robô]).
 
