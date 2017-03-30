@@ -1,16 +1,25 @@
 /*
  BASE DE DADOS: Trabalhando com Arquivos em Prolog
  Sinopse:
-    - consult
-    - make
-    - assertz e asserta
+    - consult: faz leitura de um arquivo, carregando o conteúdo para a
+    memória de trabalho
+
+
+    - make: reconsulta todos os arquivos carregados que foram
+    modificados
+
+    - assertz e asserta:
+       * assertz(F): coloca-se uma frase F no fim da def. correspondente
+                     a ela
+
+
     - dynamic
     - retract
     - abolish
     - univ ::= <variavel-livre> =.. <lista>
     - functor
     - arg
-    - see, seen	e seeing
+    - see, seen e seeing
     - tell, told e telling
 
     Ler: see: direcionar
