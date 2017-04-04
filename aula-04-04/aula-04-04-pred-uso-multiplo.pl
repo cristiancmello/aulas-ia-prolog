@@ -1,11 +1,11 @@
 :-op(34,xfx,vence).
-/* PREDICADOS DE USO MÚLTIPLO */
+/* PREDICADOS DE USO MÃšLTIPLO */
 
 append([], L, L).
 append([C|R1], L, [C|R2]):- append(R1, L, R2).
 
-Lance vence Posição :-
-	append(Esquerda,[Escolha | Direita], Posição),
+Lance vence PosiÃ§Ã£o :-
+	append(Esquerda,[Escolha | Direita], PosiÃ§Ã£o),
 	append([ Alguns | Palitos], Sobra, Escolha),
 	append(Esquerda,[Sobra | Direita],Lance),
 	not(OutroLance vence Lance).
