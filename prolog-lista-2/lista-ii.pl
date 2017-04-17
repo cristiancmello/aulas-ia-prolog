@@ -61,8 +61,6 @@ divisor_int(X, Y):-
     R is mod(X, Y),
     R = 0.
 
-
-/* Ex. 5: */
 lista_divisores_1(_, 0, _):- !, fail.
 lista_divisores_1(N, I, I):-
     divisor_int(N, I).
@@ -74,3 +72,34 @@ lista_divisores_1(N, I, M):-
 lista_divisores(N, L):-
     findall(I, lista_divisores_1(N, N, I), L1),
     list_invert(L1, L).
+    
+
+/* Ex. 5: Uma relação que dada uma lista L, devolva uma lista L1, onde todos os elementos
+   são o dobro de L.
+   
+   Ex:  ?- dobra(L,L1). 
+        L=[1,2,3], L1=[2,4,6] 
+*/
+
+lista_dobro([], []).
+lista_dobro([X|R], L2):-
+    D is X * 2,
+    lista_dobro(R, L1),
+    list_concat([D], L1, L2).
+    
+
+/* Ex. 6:  fatorial de um intervalo de números */
+% fat(4) = 4 * fat(3) = 4 * 3 * fat(2) = 4 * 3 * 2 * fat(1) = 4 * 3 * 2 * 1.
+fat(0, 1):- !.
+fat(1, 1):- !.
+fat(N, R):-
+    N1 is N-1,
+    fat(N1, R1),
+    R is R1 * N.
+    
+lista_fat(X, X, [Y]):- fat(X, Y), !.
+lista_fat(X, Y, R):-
+    Y1 is Y-1,
+    lista_fat(X, Y1, R1),
+    fat(Y, R2),
+    list_concat(R1, [R2], R).
