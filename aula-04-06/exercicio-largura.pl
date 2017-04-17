@@ -9,7 +9,7 @@ aresta(e,i).
 aresta(e,j).
 aresta(f,k).
 
-% ache todos X, onde uma condiÁ„o Y È satisfeita e retorne uma lista Z com todos os X.
+% ache todos X, onde uma condi√ß√£o Y √© satisfeita e retorne uma lista Z com todos os X.
 ache_todos(X,Y,Z) :-
 	bagof(X,Y,Z),!.
 ache_todos(_,_,[]).
@@ -25,7 +25,7 @@ inverte([X|Y],Lista):-
 	inverte(Y,Lista1),
 concatena(Lista1,[X],Lista).
 
-% estende a fila atÈ um filho N1 de N, verificando se N1 n„o pertence a fila
+% estende a fila at√© um filho N1 de N, verificando se N1 n√£o pertence a fila
 estende_ate_filho([N|Trajetoria], [N1,N|Trajetoria]) :-
 	aresta(N,N1),
 	not(member(N1,Trajetoria)).
