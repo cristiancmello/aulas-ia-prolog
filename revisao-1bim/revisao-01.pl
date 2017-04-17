@@ -42,10 +42,10 @@ lista_inverter([X|Y], L):-
     lista_inverter(Y, L1),
     concat(L1, [X], L).
 
-% Definir uma relação que dado um número N diga se é um número primo ou
-% não.
+% Definir uma relaÃ§Ã£o que dado um nÃºmero N diga se Ã© um nÃºmero primo ou
+% nÃ£o.
 %
-% Número N é primo: se N for divisível somente por 1 ou por ele mesmo.
+% NÃºmero N Ã© primo: se N for divisÃ­vel somente por 1 ou por ele mesmo.
 %
 %
 divisivel(X, Y):- 0 is X mod Y, !.
@@ -64,8 +64,8 @@ fib(N, R):-
     fib(N2, R2),
     R is R1+R2.
 
-% Defina uma relação que calcule a div inteira de dois numeros através
-% de subtrações sucessivas.
+% Defina uma relaÃ§Ã£o que calcule a div inteira de dois numeros atravÃ©s
+% de subtraÃ§Ãµes sucessivas.
 %
 % Ex.: divisao(5, 2, Q).
 %      Q = 2.
