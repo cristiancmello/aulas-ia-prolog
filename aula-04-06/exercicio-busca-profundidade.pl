@@ -22,7 +22,7 @@ aresta(e,i).
 aresta(e,j).
 aresta(f,k).
 
-% X é o elemento da lista ?
+% X Ã© o elemento da lista ?
 pertence(X,[X|_]):-!.
 pertence(X,[_|R]):- pertence(X,R).
 
