@@ -54,7 +54,7 @@ menor_da_lista([X, Y|R], M):-
     min(X, Y, M1),
     menor_da_lista([M1|R], M).
 
-% Ex. 4: Defina uma relação que dado um número forneça uma lista com
+% Ex. 4: Defina uma relaÃ§Ã£o que dado um nÃºmero forneÃ§a uma lista com
 % todos os seus divisores
 % Ex: N=12, L=[1, 2, 3, 4, 6, 12]
 divisor_int(X, Y):-
