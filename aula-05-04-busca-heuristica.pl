@@ -29,12 +29,12 @@ ap([X|Y],Z,[X|W]) :- ap(Y,Z,W).
 membro(X,[X|_]):- !.
 membro(X,[_|Y]):- membro(X,Y).
 
-% ache todos X, onde uma condição Y é satisfeita e retorne uma lista Z com
+% ache todos X, onde uma condiÃ§Ã£o Y Ã© satisfeita e retorne uma lista Z com
 % todos os X.
 ache_todos(X,Y,Z) :- bagof(X,Y,Z),!.
 ache_todos(_,_,[]).
 
-/* O programa abaixo serve para imprimir uma trajetória dada na seguinte
+/* O programa abaixo serve para imprimir uma trajetÃ³ria dada na seguinte
 forma:
 t(f([4]),g([4]), [r([4],g),r([1],c),r(raiz,b)]). */
 
