@@ -1,5 +1,5 @@
-:-op(300,xfx,para).
-:-op(300,xfx,==>).
+:- op(300,xfx,para).
+:- op(300,xfx,==>).
 :- op(35,xf,e_a_meta).
 :- op(35,xf,atinge_a_meta).
 :- op(35,xfx,transforma).
@@ -45,7 +45,7 @@ imprima_trajet([r(raiz,Raiz)]):- !,
 
 imprima_trajet( [r(Ramo, Nodo)|R]) :-
 	imprima_trajet(R), nl, write(Ramo), write(' e, portanto, temos: '),nl,
-	write(Nodo),write(’.’).
+	write(Nodo),write('.').
 
 resolva :-
 	estado_inicial(E),
@@ -84,4 +84,4 @@ calcule_hn(N,HN):-
 	HN is sqrt((XN-XS) * (XN-XS) + (YN-YS) * (YN-YS)).
 
 estado_inicial(a).
-e_a_meta(s).
+e_a_meta(b).
