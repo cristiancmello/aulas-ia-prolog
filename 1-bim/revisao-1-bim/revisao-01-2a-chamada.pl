@@ -98,3 +98,26 @@ signo(Pessoa,áries) :-
 
 % EXERCÍCIOS 6, 9, 11 e 12 feitos (pasta exercicios-apostila-pag-20-26)
 
+% 4.16 ARITMÉTICA
+% Operador is: executa operação aritmética
+% Operadores
+/*
+    ^   [potenciação]
+    mod [resto da divisao inteira]
+    //  [divisao inteira]
+    /   [divisao]
+    *   [multiplicacao]
+    +   [adicao]
+    -   [subtração]
+ */
+mdc(X, X, X).   % se X e Y são iguais, D = X.
+mdc(X, Y, D):-
+    X < Y,
+    T1 is Y-X,  % Variável da expressão devem ser instanciadas. Variável do lado esquero NÃO DEVE ESTAR INSTANCIADA.
+    mdc(X, T1, D).
+    
+mdc(X, Y, D):-
+    X > Y,
+    mdc(Y, X, D).
+
+% 4.17 LISTAS (pagina 32 do leitor de pdf)
