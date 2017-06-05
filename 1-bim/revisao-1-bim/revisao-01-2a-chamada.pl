@@ -96,4 +96,5 @@ signo(Pessoa,áries) :-
 % Apresenta-se aqui o processo de anotações e induções. O prof. passou
 % uma tabela de anotações na aula de introdução (ver no caderno).
 
-% EXERCÍCIO 6
+% EXERCÍCIOS 6, 9, 11 e 12 feitos (pasta exercicios-apostila-pag-20-26)
+
