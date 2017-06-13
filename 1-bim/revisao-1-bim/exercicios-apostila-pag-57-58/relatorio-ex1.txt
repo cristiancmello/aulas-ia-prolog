@@ -1,0 +1,9 @@
+CLIENTE 1: Diego Henrique
+    ENDEREÇO: Rua dos Palitos
+    TELEFONE: 00304033
+CLIENTE 2: Roberto Carlos
+    ENDEREÇO: Rua das Neves
+    TELEFONE: 123456
+CLIENTE 3: Tania Lucia
+    ENDEREÇO: Rua das Ostras
+    TELEFONE: 56484848
