@@ -356,3 +356,73 @@ escreva(_) :-
 % (12) "tell"/"told": escrita para um arquivo
 % "tell": inicia um arquivo para escrita
 % "told": finaliza a escrita de um arquivo.
+
+
+% 4.24 ESQUEMAS DE REPETIÇÃO
+/*
+    [1] RECURSIVIDADE
+        - Declarações são classificadas como triviais e gerais
+        - Possuem BASE (elemento verdadeiro)
+        - Possuem CASO GERAL
+ */
+somatoria_recursiva([], 0). % Base
+somatoria_recursiva([X|R], S):- somatoria_recursiva(R, S1), S is X+S1.
+
+/*
+    [2] ACUMULAÇÃO
+        - MELHORA A QUESTÃO DA EFICIÊNCIA DO ESQUEMA RECURSIVO;
+        - Nada fica pendente. Os cálculos intermediários são passados para
+          a próxima chamada pelo parâmetro acumulador;
+          
+        Percebe-se, com o código a seguir, que a ordem da chamada recursiva
+        é diferente do ESQUEMA RECURSIVO. Um acumulador já obtém o resultado
+        da operação e é passado como parâmetro para a chamada recursiva.
+    
+ */
+somatoria_acumulativa([], Acumulador, Saida):- 
+    Saida = Acumulador.
+    
+somatoria_acumulativa([X|R], ResParcial, Saida):- 
+    Acumulador is X+ResParcial, % Resultado intermediário
+    somatoria_acumulativa(R, Acumulador, Saida).
+
+soma_lista(Lista, Soma):-
+    somatoria_acumulativa(Lista, 0, Soma).
+    
+/*
+    [3] REPETIÇÃO
+        - Estratégia para se usar repetidamente um grupo de predicados.
+        
+        Formato:
+        <pred_rep>:- <condicao_parada>, !.
+        <pred_rep>:- <predicados>, [<inc> | <dec>], <pred_rep>.
+ */
+while(10):- !, nl.
+while(I):- write('i = '), writeln(I), 
+    J is I+1,
+    while(J).
+    
+estrelas(K, M):- K = M, !.
+estrelas(K, M):- writeln('*'), J is K+1, estrelas(J, M).
+
+
+/*
+    [4] MAPEAMENTO
+        - Quando se torna necessário trabalhar com conjuntos de dados
+          numéricos, o esquema mais cômodo é o de MAPEAMENTO.
+          
+        - OBJETIVO: consiste em aplicar uma operação a todos os elementos
+                    de uma ou mais listas.
+                    
+        - IMPORTANTE: um conjunto de predicados são definidos previamente
+                      (numa espécie de API).
+                      
+        [IMPORTANTE] : PRODUZIR CONTEÚDO DE REVISÃO SOBRE.
+ */
+
+% 4.25 PREDICADOS DE USO MÚLTIPLO
+% [IMPORTANTE] : PRODUZIR CONTEÚDO DE REVISÃO SOBRE.
+
+
+% 4.27 EFICIÊNCIA
+% [IMPORTANTE] : PRODUZIR CONTEÚDO DE REVISÃO SOBRE.
